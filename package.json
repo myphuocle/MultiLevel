@@ -1,0 +1,30 @@
+{
+  "name": "mvc",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "express": "~4.15.5",
+    "hstore": "0.0.1",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.1.0",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^2.1.0",
+    "pg": "^7.4.1",
+    "sequelize": "^4.31.2",
+    "serve-favicon": "~2.4.5"
+  },
+  "main": "app.js",
+  "devDependencies": {},
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

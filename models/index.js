@@ -1,0 +1,1 @@
+module.exports = [User].map(model => require(`./${model}`))
