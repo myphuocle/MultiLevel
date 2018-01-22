@@ -2,15 +2,16 @@
 const express = require('express');
 const router = express.Router();
 
+
 const Users = require('./../../models/User/index');
 var bcrypt = require('bcrypt');
 const salt = bcrypt.genSaltSync(8);
 
 var passport = require("passport");
 var passportJWT = require("passport-jwt");
-var jwt = require('jsonwebtoken');
-var ExtractJwt = passportJWT.ExtractJwt;
+// var jwt = require('jsonwebtoken');
 var JwtStrategy = passportJWT.Strategy;
+var ExtractJwt = passportJWT.ExtractJwt;
 var jwtOptions = {}
 jwtOptions.jwtFromRequest = ExtractJwt.fromAuthHeader();
 jwtOptions.secretOrKey = 'secret';
@@ -31,9 +32,18 @@ var strategy = new JwtStrategy(jwtOptions, function(jwt_payload, next) {
 });
 passport.use(strategy);
 
+// passport.authenticate('jwt', { session: false })
 
+router.use('/user', require('./user'));
 
-router.use('/user',passport.authenticate('jwt', { session: false }), require('./user'));
+router.use('/passport',passport.authenticate('jwt', { session: false }), function(req, res, next){
+	console.log("passport okokokokokok");
+	res.json({
+		success: true,
+		results: "passport okokokokokok auth",
+	});
+});
+
 
 
 router.all('*', function(req, res, next) {
