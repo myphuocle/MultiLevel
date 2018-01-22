@@ -58,3 +58,4 @@ db.postgresdb.sync()
 	// console.log('Tao models User thanh cong');
 })
 
+module.exports = User

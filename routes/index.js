@@ -1,5 +1,5 @@
 var express = require('express');
-var router = express;
+var router = express();
 
 /* GET home page. */
 // router.get('/', function(req, res, next) {
