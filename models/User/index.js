@@ -55,7 +55,7 @@ const User = db.postgresdb.define('User',{
 
 db.postgresdb.sync()
 .then(() => {
-	console.log('Tao models User thanh cong');
+	// console.log('Tao models User thanh cong');
 })
 
 module.exports = User
