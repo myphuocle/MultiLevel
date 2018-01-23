@@ -3,7 +3,7 @@ const auth = require('./../auth');
 
 module.exports = {
 	update: (req, res, next) => {
-		console.log("asdasdasdasdasd",req.user.dataValues);
+		// console.log("asdasdasdasdasd",req.user.dataValues);
 		//console.log("asdasdasdasdasdasd",req.session.user.dataValues);
 		// console.log("Params ID: " + req.params.userId);
 		// console.log("Auth.currentId: " + auth.currentId);
@@ -18,46 +18,9 @@ module.exports = {
 			.catch(ex =>{
 				console.log(ex);
 			})
-		}else{
+		} else {
 			console.log("Not authorize");
 			res.status(500).json({message: "Need auth"});
 		}
-		
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
